@@ -1,0 +1,24 @@
+##########################################
+# Syntax Colouring Map For GOTStateMachine
+##########################################
+
+##########################################
+# Datatypes (KEYWORD1)
+##########################################
+
+GOTStateMachine			KEYWORD1
+
+##########################################
+# Methods and Functions (KEYWORD2)
+##########################################
+
+setStartState			KEYWORD2
+changeState			KEYWORD2
+execute				KEYWORD2
+isDelayComplete			KEYWORD2
+isFirstTime			KEYWORD2
+
+##########################################
+# Constants (LITERAL1)
+##########################################
+
