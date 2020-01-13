@@ -75,11 +75,7 @@ void GOTStateMachine::execute() {
 // Check if been in state longer that delayPeriod - specify in mS
 bool GOTStateMachine::isFirstTime() {
 
-  if (!alreadyProcessed) {
-
-    return true;
-  }
-  return false;
+  return !alreadyProcessed;
 }
 
 // Check if first time state is processed
