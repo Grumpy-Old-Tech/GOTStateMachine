@@ -36,7 +36,7 @@ class GOTStateMachine
 {
   public:
     GOTStateMachine(unsigned long processTime);         // Instantiate and set to process current state every processTime - specify in mS
-    
+
     void setStartState(FUNC_PTR newState);              // Call last thing in Setup function
     void changeState(FUNC_PTR newState);                // Change to new state
     void execute();                                     // Process the current state if required
