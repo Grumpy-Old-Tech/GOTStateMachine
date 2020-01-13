@@ -30,7 +30,7 @@
 
 //#define   STATE_PROCESSING_FREQUENCY   50 // every xxx milliseconds
 
-typedef void (*FUNC_PTR)(); // Funtion pointer type
+typedef void (*FUNC_PTR)(); // Function pointer type
 
 class GOTStateMachine
 {
