@@ -28,7 +28,7 @@
 
 // Instantiate and set to process current state every processTime - specify in mS
 GOTStateMachine::GOTStateMachine(unsigned long processTime) {
-  
+
   executeTime = processTime;
   lastStateProcessedTime = 0;
   delayStartTime = 0;
@@ -37,7 +37,7 @@ GOTStateMachine::GOTStateMachine(unsigned long processTime) {
 
 // Call last thing in Setup function
 void GOTStateMachine::setStartState(FUNC_PTR newState) {
-  
+
   lastStateProcessedTime = millis();
   changeState(newState);
 }
@@ -52,19 +52,19 @@ void GOTStateMachine::changeState(FUNC_PTR newState) {
 
 // Process the current state if required
 void GOTStateMachine::execute() {
-  
+
   changedState = false;
   unsigned long loopTime = millis();
-  
+
   if ((loopTime - lastStateProcessedTime) > executeTime) {   // Time to process states
 
     if (!alreadyProcessed) {
 
       delayStartTime = loopTime;
     }
-    
+
     currentState();
-    
+
     lastStateProcessedTime = loopTime;
     if (!changedState) {
       alreadyProcessed = true;
@@ -75,11 +75,7 @@ void GOTStateMachine::execute() {
 // Check if been in state longer that delayPeriod - specify in mS
 bool GOTStateMachine::isFirstTime() {
 
-  if (!alreadyProcessed) {
-
-    return true;
-  }
-  return false;
+  return !alreadyProcessed;
 }
 
 // Check if first time state is processed
@@ -89,7 +85,7 @@ bool GOTStateMachine::isDelayComplete(unsigned long delayPeriod) {
 
   if ((loopTime - delayStartTime) > delayPeriod) {
 
-    return true; 
+    return true;
   }
   return false;
 }
