@@ -72,7 +72,7 @@ void GOTStateMachine::execute() {
   }
 }
 
-// Check if been in state longer that delayPeriod - specify in mS
+// Check if first time state is processed
 bool GOTStateMachine::isFirstTime() {
 
   if (!alreadyProcessed) {
@@ -82,7 +82,7 @@ bool GOTStateMachine::isFirstTime() {
   return false;
 }
 
-// Check if first time state is processed
+// Check if been in state longer that delayPeriod - specify in mS
 bool GOTStateMachine::isDelayComplete(unsigned long delayPeriod) {
 
   unsigned long loopTime = millis();
